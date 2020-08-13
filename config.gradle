@@ -12,7 +12,7 @@ ext {
     version = [
             androidXSdkVersion    : "1.1.0",
             retrofitSdkVersion    : "2.7.2",
-            dagger2SdkVersion     : "2.26",
+            dagger2SdkVersion     : "2.23.2",
             glideSdkVersion       : "4.11.0",
             butterknifeSdkVersion : "10.2.1",
             rxlifecycleSdkVersion : "1.0",
@@ -71,6 +71,8 @@ ext {
             "dagger2-compiler"         : "com.google.dagger:dagger-compiler:${version["dagger2SdkVersion"]}",
             "dagger2-android-processor": "com.google.dagger:dagger-android-processor:${version["dagger2SdkVersion"]}",
 
+            "butterknife"              : "com.jakewharton:butterknife:${version["butterknifeSdkVersion"]}",
+            "butterknife-compiler"     : "com.jakewharton:butterknife-compiler:${version["butterknifeSdkVersion"]}",
             "androideventbus"          : "org.simple:androideventbus:1.0.5.1",
             "eventbus"                 : "org.greenrobot:eventbus:3.2.0",
             "gson"                     : "com.google.code.gson:gson:2.8.6",

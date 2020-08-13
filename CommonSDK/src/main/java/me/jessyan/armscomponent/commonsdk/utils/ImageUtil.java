@@ -19,8 +19,9 @@ import android.renderscript.Element;
 import android.renderscript.RSRuntimeException;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
-import android.support.annotation.DrawableRes;
 import android.widget.ImageView;
+
+import androidx.annotation.DrawableRes;
 
 import com.jess.arms.utils.LogUtils;
 

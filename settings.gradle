@@ -1,2 +1,2 @@
 rootProject.name='华世界'
-include ':app', ':CommonSDK', ':CommonRes'
+include ':app', ':CommonSDK', ':CommonRes',':CommonService',':module_login'

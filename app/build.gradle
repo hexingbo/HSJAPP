@@ -19,10 +19,32 @@ android {
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
     }
 
+    signingConfigs {
+        config {
+            //签名文件在项目根目录下
+            //KEY_ALIAS，KEY_PASSWORD，STORE_PASSWORD写在项目根目录下的gradle.properties里
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            storeFile file('../lessodriverkeystore.jks')
+            storePassword STORE_PASSWORD
+        }
+    }
+
     buildTypes {
-        release {
+        debug {
+            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config// signingConfig signingConfigs.config//使用上面配置的签名进行打包
+        }
+
+        release {
+            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config// signingConfig signingConfigs.config//使用上面配置的签名进行打包
         }
     }
 
@@ -36,4 +58,13 @@ dependencies {
     testImplementation  rootProject.ext.dependencies["junit"]
     androidTestImplementation  rootProject.ext.dependencies["test-ext-junit"]
     androidTestImplementation  rootProject.ext.dependencies["espresso-core"]
+
+    if (!isBuildModule.toBoolean()) {
+        //在宿主 App 中使用 implementation 依赖业务组件, 业务组件的代码就会完全暴露给宿主 App, 不利于代码的隔离
+        //使用 runtimeOnly 依赖业务组件, 可实现业务组件的代码在编译时对宿主 App 不可见, 仅在运行时对宿主 App 可见
+        runtimeOnly project(":module_login")
+    }
+    implementation project(':CommonRes')
+    //因为 CommonRes 依赖了 CommonSDK, 所以如果业务模块需要公共 UI 组件就依赖 CommonRes, 如果不需要就只依赖 CommonSDK
+    implementation project(':CommonService')
 }
