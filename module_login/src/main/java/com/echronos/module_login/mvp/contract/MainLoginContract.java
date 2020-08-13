@@ -6,14 +6,9 @@ import com.jess.arms.mvp.IModel;
 
 /**
  * ================================================
+ * 作者：hexingbo
+ * 时间：08/13/2020 14:35
  * Description:
- * <p>
- * Created by MVPArmsTemplate on 08/13/2020 10:45
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
- * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>
- * <a href="https://github.com/JessYanCoding/MVPArms/wiki">See me</a>
- * <a href="https://github.com/JessYanCoding/MVPArmsTemplate">模版请保持更新</a>
  * ================================================
  */
 public interface MainLoginContract {

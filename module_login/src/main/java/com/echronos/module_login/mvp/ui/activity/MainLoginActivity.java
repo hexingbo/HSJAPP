@@ -10,6 +10,7 @@ import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 
+import com.echronos.module_login.di.component.DaggerMainLoginComponent;
 import com.echronos.module_login.mvp.contract.MainLoginContract;
 import com.echronos.module_login.mvp.presenter.MainLoginPresenter;
 
@@ -21,26 +22,21 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 /**
  * ================================================
+ * 作者：hexingbo
+ * 时间：08/13/2020 14:35
  * Description:
- * <p>
- * Created by MVPArmsTemplate on 08/13/2020 10:45
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
- * <a href="https://github.com/JessYanCoding/MVPArms">Star me</a>
- * <a href="https://github.com/JessYanCoding/MVPArms/wiki">See me</a>
- * <a href="https://github.com/JessYanCoding/MVPArmsTemplate">模版请保持更新</a>
  * ================================================
  */
 public class MainLoginActivity extends BaseActivity<MainLoginPresenter> implements MainLoginContract.View {
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
-//        DaggerMainLoginComponent //如找不到该类,请编译一下项目
-//                .builder()
-//                .appComponent(appComponent)
-//                .view(this)
-//                .build()
-//                .inject(this);
+        DaggerMainLoginComponent //如找不到该类,请编译一下项目
+                .builder()
+                .appComponent(appComponent)
+                .view(this)
+                .build()
+                .inject(this);
     }
 
     @Override

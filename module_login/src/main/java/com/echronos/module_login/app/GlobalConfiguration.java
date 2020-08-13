@@ -22,16 +22,6 @@ import me.jessyan.armscomponent.commonsdk.BuildConfig;
  * 组件的全局配置信息在此配置, 需要将此实现类声明到 AndroidManifest 中
  * CommonSDK 中已有 GlobalConfiguration 配置有所有组件都可公用的配置信息
  * 这里用来配置一些组件自身私有的配置信息
- *
- * @see com.jess.arms.base.delegate.AppDelegate
- * @see com.jess.arms.integration.ManifestParser
- * @see <a href="https://github.com/JessYanCoding/ArmsComponent/wiki#3.3">ConfigModule wiki 官方文档</a>
- * Created by ArmsComponentTemplate on 08/13/2020 10:45
- * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
- * <a href="https://github.com/JessYanCoding">Follow me</a>
- * <a href="https://github.com/JessYanCoding/ArmsComponent">Star me</a>
- * <a href="https://github.com/JessYanCoding/ArmsComponent/wiki">See me</a>
- * <a href="https://github.com/JessYanCoding/ArmsComponent-Template">模版请保持更新</a>
  * ================================================
  */
 public final class GlobalConfiguration implements ConfigModule {
